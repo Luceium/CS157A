@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Page-1" id="iPtElRWPh3RuLjCkUGT1">
-        <mxGraphModel dx="1386" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="660" dy="233" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -756,64 +756,43 @@
                 <mxCell id="237" value="subCategories" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="1186" y="327.59000000000003" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="250" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="259" edge="1">
+                <mxCell id="250" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="273" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1288.826818366802" y="189.20390593205883" as="targetPoint"/>
+                        <mxPoint x="1301.3571428571427" y="220" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="251" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="262" edge="1">
+                <mxCell id="251" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="278" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1312.5375904908537" y="240.82779889086964" as="targetPoint"/>
+                        <mxPoint x="1333.5" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="252" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="260" edge="1">
+                <mxCell id="252" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="272" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1340" y="280" as="targetPoint"/>
+                        <mxPoint x="1340" y="280.8176100628931" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="253" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="257" edge="1">
+                <mxCell id="253" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="276" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1162.3394878803938" y="245.13283644505407" as="targetPoint"/>
+                        <mxPoint x="1140.5625" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="254" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="258" edge="1">
+                <mxCell id="254" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="238" target="277" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1120" y="280" as="targetPoint"/>
+                        <mxPoint x="1120" y="280.83725495857027" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="238" value="d" style="ellipse;whiteSpace=wrap;html=1;rounded=1;arcSize=10;" parent="1" vertex="1">
                     <mxGeometry x="1221" y="265.00000000000006" width="30" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="248" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="256" target="238" edge="1">
+                <mxCell id="248" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="275" target="238" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1178.3229242261204" y="189.5868882449504" as="sourcePoint"/>
+                        <mxPoint x="1171.0897767476386" y="220" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="249" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="255" target="238" edge="1">
+                <mxCell id="249" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="274" target="238" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="1236" y="150" as="sourcePoint"/>
+                        <mxPoint x="1236" y="190" as="sourcePoint"/>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="255" value="&lt;span style=&quot;color: rgb(226, 226, 226); font-family: &amp;quot;Lato Extended&amp;quot;, Lato, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 16px; text-align: left; background-color: rgb(22, 22, 22);&quot;&gt;Grocery&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1206.5" y="170" width="59" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="256" value="&lt;span style=&quot;color: rgb(226, 226, 226); font-family: &amp;quot;Lato Extended&amp;quot;, Lato, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 16px; text-align: left; background-color: rgb(22, 22, 22);&quot;&gt;Bakeries&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1120" y="200" width="80.5" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="257" value="&lt;span style=&quot;color: rgb(226, 226, 226); font-family: &amp;quot;Lato Extended&amp;quot;, Lato, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 16px; text-align: left; background-color: rgb(22, 22, 22);&quot;&gt;&amp;nbsp;Coffee &amp;amp; Tea&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1058.5" y="230" width="100.5" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="258" value="&lt;span style=&quot;color: rgb(226, 226, 226); font-family: &amp;quot;Lato Extended&amp;quot;, Lato, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 16px; text-align: left; background-color: rgb(22, 22, 22);&quot;&gt;Food Delivery Services&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1005.63" y="262.5" width="114.37" height="37.5" as="geometry"/>
-                </mxCell>
-                <mxCell id="259" value="&lt;span style=&quot;color: rgb(226, 226, 226); font-family: &amp;quot;Lato Extended&amp;quot;, Lato, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 16px; text-align: left; background-color: rgb(22, 22, 22);&quot;&gt;Car Rentals&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1265.5" y="200" width="93.5" height="20" as="geometry"/>
-                </mxCell>
-                <mxCell id="260" value="&lt;span style=&quot;color: rgb(226, 226, 226); font-family: &amp;quot;Lato Extended&amp;quot;, Lato, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 16px; text-align: left; background-color: rgb(22, 22, 22);&quot;&gt;Event Planning &amp;amp; Services&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1340" y="262.5" width="110" height="37.5" as="geometry"/>
-                </mxCell>
-                <mxCell id="262" value="&lt;span style=&quot;color: rgb(226, 226, 226); font-family: &amp;quot;Lato Extended&amp;quot;, Lato, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 16px; text-align: left; background-color: rgb(22, 22, 22);&quot;&gt;Bed &amp;amp; Breakfast&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1303.5" y="230" width="125" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="264" value="" style="shape=requiredInterface;html=1;verticalLabelPosition=bottom;sketch=0;strokeWidth=2;fontFamily=Helvetica;fontSize=11;fontColor=default;rotation=-90;" parent="1" vertex="1">
                     <mxGeometry x="1229.44" y="214" width="14" height="20" as="geometry"/>
@@ -835,6 +814,27 @@
                 </mxCell>
                 <mxCell id="271" value="" style="shape=requiredInterface;html=1;verticalLabelPosition=bottom;sketch=0;strokeWidth=2;fontFamily=Helvetica;fontSize=11;fontColor=default;rotation=0;" parent="1" vertex="1">
                     <mxGeometry x="1316.44" y="269" width="14" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="272" value="Event Plannning &amp;amp; Services" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1340" y="262.75" width="90" height="32.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="273" value="Car Rentals" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1275" y="194" width="76" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="274" value="Grocery" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1211.72" y="180" width="48.56" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="275" value="Bakeries" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1128.5" y="194" width="57.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="276" value="Coffee &amp;amp; Tea" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1089" y="228" width="60" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="277" value="Food Delivery Services" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1033.5" y="263.75" width="90" height="32.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="278" value="Bed &amp;amp; Breakfast" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="1330.44" y="225" width="91" height="24" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
