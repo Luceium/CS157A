@@ -31,8 +31,8 @@ CREATE TABLE Business (
   longitude INT,
   streetAddress VARCHAR(255) NOT NULL,
   state CHAR(2),
-  type VARCHAR(10) NOT NULL,
-  FOREIGN KEY (type) REFERENCES BusinessCategory(bcid)
+  bcid VARCHAR(10) NOT NULL,
+  FOREIGN KEY (bcid) REFERENCES BusinessCategory(bcid)
 );
 
 CREATE TABLE Review (
@@ -242,53 +242,34 @@ INSERT INTO Compliment (makerID, recipientID) VALUES ('Y12', 'Y11');
 
 -- BUSINESS DATA
 -- Create Businesses
--- INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('BX', 'NX', 'AX', 'BCTX');
-Business Id Business Name Days Of Operation  Ambient type  Address Business Category
-Touristy 1500 N McClintock Dr, Tempe, AZ 85281 
-Touristy 1595 Spring Hill Road Suite 110 Vienna VA 22182 
-Touristy 1522 W. Sam Rayburn Dr. Bonham, CA 95051 
-Touristy 2570 El Camino Real, Santa Clara, CA 95051 
-10331 Brecksville Rd. Brecksville, OH 44141 
-2341 Roosevelt Ct Santa Clara, CA 95051 
-20285 South Western Ave., Suite # 200, Torrance, CA 90501 
-2585 El Camino Real Santa Clara, CA 
-90 Skyport Dr San Jose, CA 95110 
-80 N Market St San Jose, CA 95113 
-Yellow Stone National Park, WY 82190 
-P.O. Box 221 AZ 86028 
-Highway 64, AZ 86023 
-5847 San Felipe, Suite 2400 Houston, TX 77057 
-1132 Terry Road, Hartford, CT 06105 
-1133 Terry Road, Hartford, CT 06105 
-
-
-INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B1', 'Big Surf', 'Touristy', 'BCT1');
+-- INSERT INTO Business (bid, name, ambiance, bctid, streetAddress, state, zipcode) VALUES ('BX', 'NX', 'AX', 'BCTX');
+INSERT INTO Business (bid, name, ambiance, bcid, streetAddress, state, zipcode) VALUES ('B1', 'Big Surf', 'Touristy', 'BCT1', '1500 N McClintock Dr, Tempe', 'AZ', 85281);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B1', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B1', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B1', 'W');
 
-INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B2', 'SMITH THOMSON', 'Touristy', 'BCT6');
+INSERT INTO Business (bid, name, ambiance, bcid, streetAddress, state, zipcode) VALUES ('B2', 'SMITH THOMSON', 'Touristy', 'BCT6', '1595 Spring Hill Road Suite 110 Vienna', 'VA', 22182);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B2', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B2', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B2', 'W');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B2', 'Th');
 
-INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B3', 'Bay Area Coffee Shop', 'Touristy', 'BCT8');
+INSERT INTO Business (bid, name, ambiance, bcid, streetAddress, state, zipcode) VALUES ('B3', 'Bay Area Coffee Shop', 'Touristy', 'BCT8', '1522 W. Sam Rayburn Dr. Bonham', 'CA', 95051);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B3', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B3', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B3', 'W');
 
-INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B4', 'China  Coffee Toffee', 'Touristy', 'BCT4');
+INSERT INTO Business (bid, name, ambiance, bcid, streetAddress, state, zipcode) VALUES ('B4', 'China  Coffee Toffee', 'Touristy', 'BCT4', '2570 El Camino Real, Santa Clara', 'CA', 95051);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B4', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B4', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B4', 'W');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B5', 'Hastings Water Works', 'BCT7');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B5', 'Hastings Water Works', 'BCT7', '10331 Brecksville Rd. Brecksville', 'OH', 44141);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B5', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B5', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B5', 'W');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B6', 'Catch Your Big Break', 'BCT3');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B6', 'Catch Your Big Break', 'BCT3', '2341 Roosevelt Ct Santa Clara', 'CA', 95051);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'W');
@@ -297,55 +278,55 @@ INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'F');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'S');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'Su');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B7', 'The Cinebar', 'BCT5');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B7', 'The Cinebar', 'BCT5', '20285 South Western Ave., Suite # 200, Torrance', 'CA', 90501);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B7', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B7', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B7', 'W');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B7', 'Th');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B8', 'Coffee Bar & Bistro', 'BCT5');
+INSERT INTO Business (bid, name, bcid, streetAddress, state) VALUES ('B8', 'Coffee Bar & Bistro', 'BCT5', '2585 El Camino Real Santa Clara', 'CA');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B8', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B8', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B8', 'W');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B9', 'Hobee\'s', 'BCT6');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B9', 'Hobee\'s', 'BCT6', '90 Skyport Dr San Jose', 'CA', 95110);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'W');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'Th');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'F');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B10', 'Cafe Gourmet', 'BCT6');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B10', 'Cafe Gourmet', 'BCT6', '80 N Market St San Jose', 'CA', 95113);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B10', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B10', 'T');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B11', 'Yellow Stone National Park', 'BCT2');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B11', 'Yellow Stone National Park', 'BCT2', 'Yellow Stone National Park', 'WY', 82190);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B11', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B11', 'F');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B11', 'S');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B11', 'Su');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B12', 'Petrified Forest National Park', 'BCT2');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B12', 'Petrified Forest National Park', 'BCT2', 'P.O. Box 221', 'AZ', 86028);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B12', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B12', 'T');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B12', 'Su');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B13', 'Grand Canyon National park', 'BCT2');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B13', 'Grand Canyon National park', 'BCT2', 'Highway 64', 'AZ', 86023);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B13', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B13', 'S');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B13', 'Su');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B35', 'Connecticut Bar', 'BCT5');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B35', 'Connecticut Bar', 'BCT5', '5847 San Felipe, Suite 2400 Houston', 'TX', 77057);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B35', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B35', 'Th');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B35', 'Su');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B36', 'Sherley\'s Bar & Restaurent', 'BCT5');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B36', 'Sherley\'s Bar & Restaurent', 'BCT5', '1132 Terry Road, Hartford', 'CT', 06105);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B36', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B36', 'W');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B36', 'Su');
 
-INSERT INTO Business (bid, name, bctid) VALUES ('B14', 'Connecticut Bar & Restaurent', 'BCT5');
+INSERT INTO Business (bid, name, bcid, streetAddress, state, zipcode) VALUES ('B14', 'Connecticut Bar & Restaurent', 'BCT5', '1133 Terry Road, Hartford', 'CT', 06105);
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B14', 'M');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B14', 'W');
 INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B14', 'Su');
@@ -429,4 +410,5 @@ INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B35', 'Checkin info 35
 INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B36', 'Checkin info 36');
 
 -- REVIEW DATA
+-- Create Reviews & Comments
 
