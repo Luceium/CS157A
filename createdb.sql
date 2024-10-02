@@ -36,11 +36,12 @@ CREATE TABLE Business (
 );
 
 CREATE TABLE Review (
-  id INT PRIMARY KEY AUTO_INCREMENT,
+  id VARCHAR(10) PRIMARY KEY,
   bid VARCHAR(10) NOT NULL,
   author VARCHAR(10) NOT NULL,
+  rating INT NOT NULL,
   publishDate DATE NOT NULL,
-  textContent TEXT NOT NULL,
+  textContent TEXT,
   FOREIGN KEY (bid) REFERENCES Business(bid) ON DELETE CASCADE,
   FOREIGN KEY (author) REFERENCES User(id) ON DELETE CASCADE
 );
@@ -99,10 +100,10 @@ CREATE TABLE ExceptionSchedule (
 
 CREATE TABLE Comment (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  rid INT NOT NULL,
+  rid VARCHAR(10) NOT NULL,
   author VARCHAR(10) NOT NULL,
-  date DATE NOT NULL,
-  textContent TEXT NOT NULL,
+  date DATE,
+  textContent TEXT,
   FOREIGN KEY (rid) REFERENCES Review(id) ON DELETE CASCADE,
   FOREIGN KEY (author) REFERENCES User(id) ON DELETE CASCADE
 );
@@ -134,14 +135,14 @@ CREATE TABLE Checkin (
 
 CREATE TABLE ReviewHasMultimedia (
   mid INT PRIMARY KEY,
-  rid INT,
+  rid VARCHAR(10),
   FOREIGN KEY (mid) REFERENCES Multimedia(id),
   FOREIGN KEY (rid) REFERENCES Review(id) ON DELETE CASCADE
 );
 
 CREATE TABLE Votes (
   uid VARCHAR(10),
-  rid INT,
+  rid VARCHAR(10),
   useful BOOL,
   PRIMARY KEY (uid, rid),
   FOREIGN KEY (uid) REFERENCES User(id),
@@ -154,22 +155,6 @@ CREATE TABLE Likes (
   PRIMARY KEY (uid, mid),
   FOREIGN KEY (uid) REFERENCES User(id),
   FOREIGN KEY (mid) REFERENCES Multimedia(id)
-);
-
-CREATE TABLE StarsR (
-  uid VARCHAR(10),
-  rid INT,
-  PRIMARY KEY (uid, rid),
-  FOREIGN KEY (uid) REFERENCES User(id),
-  FOREIGN KEY (rid) REFERENCES Review(id)
-);
-
-CREATE TABLE StarsB (
-  uid VARCHAR(10),
-  bid VARCHAR(10),
-  PRIMARY KEY (uid, bid),
-  FOREIGN KEY (uid) REFERENCES User(id),
-  FOREIGN KEY (bid) REFERENCES Business(bid)
 );
 
 -- USER DATA
@@ -410,5 +395,5 @@ INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B35', 'Checkin info 35
 INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B36', 'Checkin info 36');
 
 -- REVIEW DATA
--- Create Reviews & Comments
-
+-- Create Reviews & Create Comments
+-- INSERT INTO Review () VALUES ();
