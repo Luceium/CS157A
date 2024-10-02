@@ -10,31 +10,29 @@ CREATE TABLE User (
 
 
 CREATE TABLE BusinessCategory (
-  type VARCHAR(50) PRIMARY KEY
+  bcid VARCHAR(10) PRIMARY KEY,
+  name VARCHAR(50) UNIQUE NOT NULL
 );
 
 CREATE TABLE Subcategory (
-  type VARCHAR(50) PRIMARY KEY
-);
-
-CREATE TABLE CatToSubcat (
-  cat VARCHAR(50),
-  subcat VARCHAR(100) PRIMARY KEY,
-  FOREIGN KEY (cat) REFERENCES BusinessCategory(type),
-  FOREIGN KEY (subcat) REFERENCES Subcategory(type)
+  name VARCHAR(50),
+  bcid VARCHAR(10),
+  FOREIGN KEY (bcid) REFERENCES BusinessCategory(bcid),
+  PRIMARY KEY (name, bcid)
 );
 
 CREATE TABLE Business (
   bid VARCHAR(10) PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
   parkingType ENUM('street', 'garage', 'lot', 'valet'),
   ambiance ENUM('romantic', 'classy', 'touristy', 'casual'),
   zipcode INT,
-  latitude INT NOT NULL,
-  longitude INT NOT NULL,
+  latitude INT,
+  longitude INT,
   streetAddress VARCHAR(255) NOT NULL,
   state CHAR(2),
-  type VARCHAR(50) NOT NULL,
-  FOREIGN KEY (type) REFERENCES BusinessCategory(type)
+  type VARCHAR(10) NOT NULL,
+  FOREIGN KEY (type) REFERENCES BusinessCategory(bcid)
 );
 
 CREATE TABLE Review (
@@ -174,9 +172,6 @@ CREATE TABLE StarsB (
   FOREIGN KEY (bid) REFERENCES Business(bid)
 );
 
--- CHECKIN DATA
--- Depends on have a user that's checkedin so needs to be instantiated with users
-
 -- USER DATA
 -- Create Users
 INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y1', 'john@yahoo.com', 'John', 'Smith', '1992-12-12', 'FL', 'M');
@@ -224,6 +219,85 @@ INSERT INTO Compliment (makerID, recipientID) VALUES ('Y8', 'Y6');
 INSERT INTO Compliment (makerID, recipientID) VALUES ('Y11', 'Y5');
 INSERT INTO Compliment (makerID, recipientID) VALUES ('Y12', 'Y11');
 
+-- BUSINESS CATEGORIES
+-- Create Business Categories
+ INSERT INTO BusinessCategory (bcid, name) VALUES ('BCT1', 'Amusement Parks');
+ INSERT INTO BusinessCategory (bcid, name) VALUES ('BCT2', 'National Parks');
+ INSERT INTO BusinessCategory (bcid, name) VALUES ('BCT3', 'Career Counseling');
+ INSERT INTO BusinessCategory (bcid, name) VALUES ('BCT4', 'Food and More');
+ INSERT INTO BusinessCategory (bcid, name) VALUES ('BCT5', 'Bars');
+ INSERT INTO BusinessCategory (bcid, name) VALUES ('BCT6', 'Restaurents');
+ INSERT INTO BusinessCategory (bcid, name) VALUES ('BCT7', 'Pool Cleaners');
+ INSERT INTO BusinessCategory (bcid, name) VALUES ('BCT8', 'Coffee Shops');
+
+-- Create Subcategories
+ INSERT INTO Subcategory (bcid, name) VALUES ('BCT1', 'Water Parks');
+ INSERT INTO Subcategory (bcid, name) VALUES ('BCT2', 'Wildlife National Parks');
+ INSERT INTO Subcategory (bcid, name) VALUES ('BCT3', 'Career Counselling for kids');
+ INSERT INTO Subcategory (bcid, name) VALUES ('BCT4', 'Ice-cream and Yougurt');
+ INSERT INTO Subcategory (bcid, name) VALUES ('BCT5', 'Sports bar');
+ INSERT INTO Subcategory (bcid, name) VALUES ('BCT6', 'Ice-cream and Yougurt');
+ INSERT INTO Subcategory (bcid, name) VALUES ('BCT7', 'Swimming pool cleaners');
+ INSERT INTO Subcategory (bcid, name) VALUES ('BCT8', 'Cold coffee shops');
+
+-- BUSINESS DATA
+-- Create Businesses
+-- INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('BX', 'NX', 'AX', 'BCTX');
+Business Id Business Name Days Of Operation  Ambient type  Address Business Category
+Touristy 1500 N McClintock Dr, Tempe, AZ 85281 
+Touristy 1595 Spring Hill Road Suite 110 Vienna VA 22182 
+Touristy 1522 W. Sam Rayburn Dr. Bonham, CA 95051 
+Touristy 2570 El Camino Real, Santa Clara, CA 95051 
+10331 Brecksville Rd. Brecksville, OH 44141 
+2341 Roosevelt Ct Santa Clara, CA 95051 
+20285 South Western Ave., Suite # 200, Torrance, CA 90501 
+2585 El Camino Real Santa Clara, CA 
+90 Skyport Dr San Jose, CA 95110 
+80 N Market St San Jose, CA 95113 
+Yellow Stone National Park, WY 82190 
+P.O. Box 221 AZ 86028 
+Highway 64, AZ 86023 
+5847 San Felipe, Suite 2400 Houston, TX 77057 
+1132 Terry Road, Hartford, CT 06105 
+1133 Terry Road, Hartford, CT 06105 
+
+
+INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B1', 'Big Surf', 'Touristy', 'BCT1');
+Mon, Tue, Wed
+INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B2', 'SMITH THOMSON', 'Touristy', 'BCT6');
+Mon, Tue, Wed, Thu
+INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B3', 'Bay Area Coffee Shop', 'Touristy', 'BCT8');
+Mon, Tue, Wed
+INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B4', 'China  Coffee Toffee', 'Touristy', 'BCT4');
+Mon, Tue, Wed
+INSERT INTO Business (bid, name, bctid) VALUES ('B5', 'Hastings Water Works', 'BCT7');
+Mon, Tue, Wed
+INSERT INTO Business (bid, name, bctid) VALUES ('B6', 'Catch Your Big Break', 'BCT3');
+Mon, Tue, Wed, Thu, Fri, Sat, Sun
+INSERT INTO Business (bid, name, bctid) VALUES ('B7', 'The Cinebar', 'BCT5');
+Mon, Tue, Wed, Thu
+INSERT INTO Business (bid, name, bctid) VALUES ('B8', 'Coffee Bar & Bistro', 'BCT5');
+Mon, Tue, Wed
+INSERT INTO Business (bid, name, bctid) VALUES ('B9', 'Hobee\'s', 'BCT6');
+Mon, Tue, Wed, Thu, Fri
+INSERT INTO Business (bid, name, bctid) VALUES ('B10', 'Cafe Gourmet', 'BCT6');
+Mon, Tue
+INSERT INTO Business (bid, name, bctid) VALUES ('B11', 'Yellow Stone National Park', 'BCT2');
+Mon, Fri, Sat, Sun
+INSERT INTO Business (bid, name, bctid) VALUES ('B12', 'Petrified Forest National Park', 'BCT2');
+Mon, Tue, Sun
+INSERT INTO Business (bid, name, bctid) VALUES ('B13', 'Grand Canyon National park', 'BCT2');
+Mon, Sat, Sun
+INSERT INTO Business (bid, name, bctid) VALUES ('B35', 'Connecticut Bar', 'BCT5');
+Mon, Thu, Sun
+INSERT INTO Business (bid, name, bctid) VALUES ('B36', 'Sherleys Bar & Restaurent', 'BCT5');
+Mon, Wed, Sun
+INSERT INTO Business (bid, name, bctid) VALUES ('B14', 'Connecticut Bar & Restaurent', 'BCT5');
+Mon, Wed, Sun
+
+
+-- CHECKIN DATA
+-- Depends on Users and Businesses
 -- Create Checkins
 INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y1', 'B3', 'Checkin Info 3');
 INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y1', 'B2', 'Checkin Info 2');
@@ -299,3 +373,6 @@ INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B2', 'Checkin info 2')
 INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B13', 'Checkin info 13'); 
 INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B35', 'Checkin info 35');
 INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B36', 'Checkin info 36');
+
+-- REVIEW DATA
+
