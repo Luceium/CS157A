@@ -78,7 +78,7 @@ CREATE TABLE TimeRange (
 CREATE TABLE Schedule (
   bid VARCHAR(10),
   dayOfWeek ENUM('M','T','W','Th','F','S','Su') NOT NULL,
-  hours INT NOT NULL,
+  hours INT,
   break INT,
   PRIMARY KEY (bid, dayOfWeek),
   FOREIGN KEY (bid) REFERENCES Business(bid) ON DELETE CASCADE,
@@ -263,38 +263,92 @@ Highway 64, AZ 86023
 
 
 INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B1', 'Big Surf', 'Touristy', 'BCT1');
-Mon, Tue, Wed
-INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B2', 'SMITH THOMSON', 'Touristy', 'BCT6');
-Mon, Tue, Wed, Thu
-INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B3', 'Bay Area Coffee Shop', 'Touristy', 'BCT8');
-Mon, Tue, Wed
-INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B4', 'China  Coffee Toffee', 'Touristy', 'BCT4');
-Mon, Tue, Wed
-INSERT INTO Business (bid, name, bctid) VALUES ('B5', 'Hastings Water Works', 'BCT7');
-Mon, Tue, Wed
-INSERT INTO Business (bid, name, bctid) VALUES ('B6', 'Catch Your Big Break', 'BCT3');
-Mon, Tue, Wed, Thu, Fri, Sat, Sun
-INSERT INTO Business (bid, name, bctid) VALUES ('B7', 'The Cinebar', 'BCT5');
-Mon, Tue, Wed, Thu
-INSERT INTO Business (bid, name, bctid) VALUES ('B8', 'Coffee Bar & Bistro', 'BCT5');
-Mon, Tue, Wed
-INSERT INTO Business (bid, name, bctid) VALUES ('B9', 'Hobee\'s', 'BCT6');
-Mon, Tue, Wed, Thu, Fri
-INSERT INTO Business (bid, name, bctid) VALUES ('B10', 'Cafe Gourmet', 'BCT6');
-Mon, Tue
-INSERT INTO Business (bid, name, bctid) VALUES ('B11', 'Yellow Stone National Park', 'BCT2');
-Mon, Fri, Sat, Sun
-INSERT INTO Business (bid, name, bctid) VALUES ('B12', 'Petrified Forest National Park', 'BCT2');
-Mon, Tue, Sun
-INSERT INTO Business (bid, name, bctid) VALUES ('B13', 'Grand Canyon National park', 'BCT2');
-Mon, Sat, Sun
-INSERT INTO Business (bid, name, bctid) VALUES ('B35', 'Connecticut Bar', 'BCT5');
-Mon, Thu, Sun
-INSERT INTO Business (bid, name, bctid) VALUES ('B36', 'Sherleys Bar & Restaurent', 'BCT5');
-Mon, Wed, Sun
-INSERT INTO Business (bid, name, bctid) VALUES ('B14', 'Connecticut Bar & Restaurent', 'BCT5');
-Mon, Wed, Sun
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B1', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B1', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B1', 'W');
 
+INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B2', 'SMITH THOMSON', 'Touristy', 'BCT6');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B2', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B2', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B2', 'W');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B2', 'Th');
+
+INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B3', 'Bay Area Coffee Shop', 'Touristy', 'BCT8');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B3', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B3', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B3', 'W');
+
+INSERT INTO Business (bid, name, ambiance, bctid) VALUES ('B4', 'China  Coffee Toffee', 'Touristy', 'BCT4');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B4', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B4', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B4', 'W');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B5', 'Hastings Water Works', 'BCT7');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B5', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B5', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B5', 'W');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B6', 'Catch Your Big Break', 'BCT3');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'W');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'Th');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'F');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'S');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B6', 'Su');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B7', 'The Cinebar', 'BCT5');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B7', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B7', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B7', 'W');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B7', 'Th');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B8', 'Coffee Bar & Bistro', 'BCT5');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B8', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B8', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B8', 'W');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B9', 'Hobee\'s', 'BCT6');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'W');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'Th');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B9', 'F');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B10', 'Cafe Gourmet', 'BCT6');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B10', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B10', 'T');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B11', 'Yellow Stone National Park', 'BCT2');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B11', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B11', 'F');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B11', 'S');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B11', 'Su');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B12', 'Petrified Forest National Park', 'BCT2');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B12', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B12', 'T');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B12', 'Su');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B13', 'Grand Canyon National park', 'BCT2');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B13', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B13', 'S');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B13', 'Su');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B35', 'Connecticut Bar', 'BCT5');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B35', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B35', 'Th');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B35', 'Su');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B36', 'Sherley\'s Bar & Restaurent', 'BCT5');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B36', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B36', 'W');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B36', 'Su');
+
+INSERT INTO Business (bid, name, bctid) VALUES ('B14', 'Connecticut Bar & Restaurent', 'BCT5');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B14', 'M');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B14', 'W');
+INSERT INTO Schedule (bid, dayOfWeek) VALUES ('B14', 'Su');
 
 -- CHECKIN DATA
 -- Depends on Users and Businesses
