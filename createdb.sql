@@ -180,17 +180,17 @@ CREATE TABLE StarsB (
 -- USER DATA
 -- Create Users
 INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y1', 'john@yahoo.com', 'John', 'Smith', '1992-12-12', 'FL', 'M');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y2', 'juan@gmail.com', 'Juan', 'Carlos', '1988-02-07', 'AK', 'M');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y3', 'Jane@gmail.com', 'Jane', 'Chapel', '1980-06-01', 'IL', 'F');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y4', 'adi@yahoo.com', 'Aditya', 'Awasthi', '1994-04-12', 'CA', 'M');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y5', 'james@hotmail.com', 'James', 'Williams', '1991-05-05', 'NY', 'M');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y6', 'mike@yahoo.com', 'Mike', 'Brown', '1988-03-01', 'NC', 'M');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y7', 'bob@yahoo.com', 'Bob', 'Jones', '1970-02-19', 'NY', 'M');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y8', 'wei@gmail.com', ' Wei', 'Zhang', '1975-03-18', 'NV', 'F');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y9', 'mark@gmail.com', 'Mark', 'Davis', '1993-11-02', 'CA', 'M');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y10', 'daniel@yahoo.com', 'Daniel', 'Garcia', '1984-05-10', 'NJ', 'M');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y11', 'maria@hotmail.com', 'Maria', 'Rodriguez', '1985-08-12', 'CA', 'F');
-INSERT INTO USER(id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y12', 'freya@yahoo.com', 'Freya', 'Wilson', '1995-10-05', 'NJ', 'F');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y2', 'juan@gmail.com', 'Juan', 'Carlos', '1988-02-07', 'AK', 'M');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y3', 'Jane@gmail.com', 'Jane', 'Chapel', '1980-06-01', 'IL', 'F');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y4', 'adi@yahoo.com', 'Aditya', 'Awasthi', '1994-04-12', 'CA', 'M');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y5', 'james@hotmail.com', 'James', 'Williams', '1991-05-05', 'NY', 'M');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y6', 'mike@yahoo.com', 'Mike', 'Brown', '1988-03-01', 'NC', 'M');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y7', 'bob@yahoo.com', 'Bob', 'Jones', '1970-02-19', 'NY', 'M');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y8', 'wei@gmail.com', ' Wei', 'Zhang', '1975-03-18', 'NV', 'F');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y9', 'mark@gmail.com', 'Mark', 'Davis', '1993-11-02', 'CA', 'M');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y10', 'daniel@yahoo.com', 'Daniel', 'Garcia', '1984-05-10', 'NJ', 'M');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y11', 'maria@hotmail.com', 'Maria', 'Rodriguez', '1985-08-12', 'CA', 'F');
+INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y12', 'freya@yahoo.com', 'Freya', 'Wilson', '1995-10-05', 'NJ', 'F');
 
 -- Create Friend Relationships
 INSERT INTO Friends (uid1, uid2) VALUES ('Y1', 'Y2');
