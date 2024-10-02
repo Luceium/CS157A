@@ -40,7 +40,7 @@ CREATE TABLE Review (
   bid VARCHAR(10) NOT NULL,
   author VARCHAR(10) NOT NULL,
   rating INT NOT NULL,
-  publishDate DATE NOT NULL,
+  publishDate DATETIME NOT NULL,
   textContent TEXT,
   FOREIGN KEY (bid) REFERENCES Business(bid) ON DELETE CASCADE,
   FOREIGN KEY (author) REFERENCES User(id) ON DELETE CASCADE
@@ -396,4 +396,37 @@ INSERT INTO Checkin (uid, bid, checkinfo) VALUES ('Y12', 'B36', 'Checkin info 36
 
 -- REVIEW DATA
 -- Create Reviews & Create Comments
--- INSERT INTO Review () VALUES ();
+-- Assumption: PDT is handled by the insertions happening on a device in the PDT timezone and mySQL converting TIMESTAMP to UTC for storage.
+
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R1', 3, 'Y11', '2007-10-02 09:10:54', 'B3');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R2', 2, 'Y10', '2007-09-29 13:45:00', 'B1');
+INSERT INTO Comment (rid, author) VALUES ('R2', 'Y3');
+INSERT INTO Comment (rid, author) VALUES ('R2', 'Y2');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R3', 4, 'Y2', '2007-09-29 10:38:25', 'B10');
+INSERT INTO Comment (rid, author) VALUES ('R3', 'Y3');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R4', 5, 'Y11', '2007-10-02 13:05:56', 'B4');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R5', 5, 'Y1', '2007-10-25 17:15:00', 'B3');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R6', 5, 'Y4', '2007-09-26 17:15:00', 'B4');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R7', 5, 'Y9', '2007-09-26 17:15:00', 'B5');
+INSERT INTO Comment (rid, author) VALUES ('R7', 'Y8');
+INSERT INTO Comment (rid, author) VALUES ('R7', 'Y11');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R8', 5, 'Y5', '2007-09-27 17:15:00', 'B6');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R9', 5, 'Y12', '2007-09-28 17:15:00', 'B7');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R10', 5, 'Y5', '2007-10-29 17:15:00', 'B8');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R11', 5, 'Y1', '2007-09-30 17:15:00', 'B9');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R12', 5, 'Y12', '2007-10-25 17:15:00', 'B10');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R13', 5, 'Y4', '2007-09-25 17:15:00', 'B11');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R14', 5, 'Y5', '2007-09-25 17:15:00', 'B12');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R15', 5, 'Y1', '2007-09-29 17:15:00', 'B13');
+INSERT INTO Comment (rid, author) VALUES ('R15', 'Y8');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R16', 2, 'Y11', '2015-06-07 17:15:00', 'B2');
+INSERT INTO Comment (rid, author) VALUES ('R16', 'Y8');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R17', 1, 'Y4', '2015-05-05 17:15:00', 'B2');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R18', 1, 'Y1', '2015-05-05 17:15:00', 'B2');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R19', 1, 'Y10', '2007-10-25 17:15:00', 'B3');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R20', 1, 'Y1', '2007-09-28 17:15:00', 'B4');
+INSERT INTO Comment (rid, author) VALUES ('R20', 'Y7');
+INSERT INTO Comment (rid, author) VALUES ('R20', 'Y10');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R21', 4, 'Y11', '2015-06-07 17:15:00', 'B14');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R22', 1, 'Y4', '2015-05-05 17:15:00', 'B14');
+INSERT INTO Review(id, rating, author, publishDate, bid) VALUES ('R23', 1, 'Y1', '2015-05-05 17:15:00', 'B14');
