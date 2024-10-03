@@ -8,7 +8,6 @@ CREATE TABLE User (
   firstName VARCHAR(50) NOT NULL
 );
 
-
 CREATE TABLE BusinessCategory (
   bcid VARCHAR(10) PRIMARY KEY,
   name VARCHAR(50) UNIQUE NOT NULL
@@ -17,7 +16,7 @@ CREATE TABLE BusinessCategory (
 CREATE TABLE Subcategory (
   name VARCHAR(50),
   bcid VARCHAR(10),
-  FOREIGN KEY (bcid) REFERENCES BusinessCategory(bcid),
+  FOREIGN KEY (bcid) REFERENCES BusinessCategory(bcid) ON DELETE CASCADE,
   PRIMARY KEY (name, bcid)
 );
 
@@ -35,25 +34,6 @@ CREATE TABLE Business (
   FOREIGN KEY (bcid) REFERENCES BusinessCategory(bcid)
 );
 
-CREATE TABLE Review (
-  id VARCHAR(10) PRIMARY KEY,
-  bid VARCHAR(10) NOT NULL,
-  author VARCHAR(10) NOT NULL,
-  rating INT NOT NULL,
-  publishDate DATETIME NOT NULL,
-  textContent TEXT,
-  FOREIGN KEY (bid) REFERENCES Business(bid) ON DELETE CASCADE,
-  FOREIGN KEY (author) REFERENCES User(id) ON DELETE CASCADE
-);
-
-CREATE TABLE Compliment (
-  makerID VARCHAR(10) NOT NULL,
-  recipientID VARCHAR(10) NOT NULL,
-  FOREIGN KEY (makerID) REFERENCES User(id) ON DELETE CASCADE,
-  FOREIGN KEY (recipientID) REFERENCES User(id) ON DELETE CASCADE,
-  PRIMARY KEY (makerID, recipientID)
-);
-
 CREATE TABLE Multimedia (
   id INT PRIMARY KEY AUTO_INCREMENT,
   description TEXT,
@@ -66,6 +46,27 @@ CREATE TABLE Multimedia (
   FOREIGN KEY (uAuthor) REFERENCES User(id) ON DELETE CASCADE,
   FOREIGN KEY (bAuthor) REFERENCES Business(bid) ON DELETE CASCADE,
   CHECK ((uAuthor IS NOT NULL AND bAuthor IS NULL) OR (bAuthor IS NOT NULL AND uAuthor IS NULL))
+);
+
+CREATE TABLE Review (
+  id VARCHAR(10) PRIMARY KEY,
+  bid VARCHAR(10) NOT NULL,
+  author VARCHAR(10) NOT NULL,
+  rating INT NOT NULL,
+  publishDate DATETIME NOT NULL,
+  textContent TEXT,
+  multimedia INT,
+  FOREIGN KEY (bid) REFERENCES Business(bid) ON DELETE CASCADE,
+  FOREIGN KEY (author) REFERENCES User(id) ON DELETE CASCADE,
+  FOREIGN KEY (multimedia) REFERENCES Multimedia(id) ON DELETE SET NULL
+);
+
+CREATE TABLE Compliment (
+  makerID VARCHAR(10) NOT NULL,
+  recipientID VARCHAR(10) NOT NULL,
+  FOREIGN KEY (makerID) REFERENCES User(id) ON DELETE CASCADE,
+  FOREIGN KEY (recipientID) REFERENCES User(id) ON DELETE CASCADE,
+  PRIMARY KEY (makerID, recipientID)
 );
 
 CREATE TABLE TimeRange (
@@ -116,28 +117,13 @@ CREATE TABLE Friends (
   FOREIGN KEY (uid2) REFERENCES User(id) ON DELETE CASCADE
 );
 
-CREATE TABLE Creates (
-  mid INT,
-  uid VARCHAR(10) NOT NULL,
-  PRIMARY KEY (mid),
-  FOREIGN KEY (mid) REFERENCES Multimedia(id) ON DELETE CASCADE,
-  FOREIGN KEY (uid) REFERENCES User(id) ON DELETE CASCADE
-);
-
 CREATE TABLE Checkin (
   id INT PRIMARY KEY AUTO_INCREMENT,
   uid VARCHAR(10) NOT NULL,
   bid VARCHAR(10) NOT NULL,
   checkinfo VARCHAR(255) NOT NULL,
-  FOREIGN KEY (uid) REFERENCES User(id),
-  FOREIGN KEY (bid) REFERENCES Business(bid)
-);
-
-CREATE TABLE ReviewHasMultimedia (
-  mid INT PRIMARY KEY,
-  rid VARCHAR(10),
-  FOREIGN KEY (mid) REFERENCES Multimedia(id),
-  FOREIGN KEY (rid) REFERENCES Review(id) ON DELETE CASCADE
+  FOREIGN KEY (uid) REFERENCES User(id) ON DELETE CASCADE,
+  FOREIGN KEY (bid) REFERENCES Business(bid) ON DELETE CASCADE
 );
 
 CREATE TABLE Votes (
@@ -145,32 +131,32 @@ CREATE TABLE Votes (
   rid VARCHAR(10),
   useful BOOL,
   PRIMARY KEY (uid, rid),
-  FOREIGN KEY (uid) REFERENCES User(id),
-  FOREIGN KEY (rid) REFERENCES Review(id)
+  FOREIGN KEY (uid) REFERENCES User(id) ON DELETE CASCADE,
+  FOREIGN KEY (rid) REFERENCES Review(id) ON DELETE CASCADE
 );
 
 CREATE TABLE Likes (
   uid VARCHAR(10),
   mid INT,
   PRIMARY KEY (uid, mid),
-  FOREIGN KEY (uid) REFERENCES User(id),
-  FOREIGN KEY (mid) REFERENCES Multimedia(id)
+  FOREIGN KEY (uid) REFERENCES User(id) ON DELETE CASCADE,
+  FOREIGN KEY (mid) REFERENCES Multimedia(id) ON DELETE CASCADE
 );
 
 -- USER DATA
 -- Create Users
 INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y1', 'john@yahoo.com', 'John', 'Smith', '1992-12-12', 'FL', 'M');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y2', 'juan@gmail.com', 'Juan', 'Carlos', '1988-02-07', 'AK', 'M');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y3', 'Jane@gmail.com', 'Jane', 'Chapel', '1980-06-01', 'IL', 'F');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y4', 'adi@yahoo.com', 'Aditya', 'Awasthi', '1994-04-12', 'CA', 'M');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y5', 'james@hotmail.com', 'James', 'Williams', '1991-05-05', 'NY', 'M');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y6', 'mike@yahoo.com', 'Mike', 'Brown', '1988-03-01', 'NC', 'M');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y7', 'bob@yahoo.com', 'Bob', 'Jones', '1970-02-19', 'NY', 'M');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y8', 'wei@gmail.com', ' Wei', 'Zhang', '1975-03-18', 'NV', 'F');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y9', 'mark@gmail.com', 'Mark', 'Davis', '1993-11-02', 'CA', 'M');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y10', 'daniel@yahoo.com', 'Daniel', 'Garcia', '1984-05-10', 'NJ', 'M');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y11', 'maria@hotmail.com', 'Maria', 'Rodriguez', '1985-08-12', 'CA', 'F');
-INSERT INTO USER (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y12', 'freya@yahoo.com', 'Freya', 'Wilson', '1995-10-05', 'NJ', 'F');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y2', 'juan@gmail.com', 'Juan', 'Carlos', '1988-02-07', 'AK', 'M');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y3', 'Jane@gmail.com', 'Jane', 'Chapel', '1980-06-01', 'IL', 'F');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y4', 'adi@yahoo.com', 'Aditya', 'Awasthi', '1994-04-12', 'CA', 'M');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y5', 'james@hotmail.com', 'James', 'Williams', '1991-05-05', 'NY', 'M');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y6', 'mike@yahoo.com', 'Mike', 'Brown', '1988-03-01', 'NC', 'M');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y7', 'bob@yahoo.com', 'Bob', 'Jones', '1970-02-19', 'NY', 'M');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y8', 'wei@gmail.com', ' Wei', 'Zhang', '1975-03-18', 'NV', 'F');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y9', 'mark@gmail.com', 'Mark', 'Davis', '1993-11-02', 'CA', 'M');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y10', 'daniel@yahoo.com', 'Daniel', 'Garcia', '1984-05-10', 'NJ', 'M');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y11', 'maria@hotmail.com', 'Maria', 'Rodriguez', '1985-08-12', 'CA', 'F');
+INSERT INTO User (id, email, firstName, lastName, dateOfBirth, birthPlace, gender) VALUES ('Y12', 'freya@yahoo.com', 'Freya', 'Wilson', '1995-10-05', 'NJ', 'F');
 
 -- Create Friend Relationships
 INSERT INTO Friends (uid1, uid2) VALUES ('Y1', 'Y2');
