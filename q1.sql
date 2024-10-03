@@ -1,3 +1,5 @@
+-- Count the number of businesses having business category name as “National Parks” situated in Arizona
+
 SELECT COUNT(*)
 FROM (
         SELECT b.state, bc.name
