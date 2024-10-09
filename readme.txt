@@ -2,7 +2,7 @@ The readme.txt file must have your name, list of tables that your createdb.sql
 file generates and execution result of query files (q1.sql…q6.sql). There is 10
 points penalty if this file or some required information is missing from your submission.
 
-Name: Mauricio Curiel,
+Name: Mauricio Curiel
 
 Tables created in createdb.sql:
 +-------------------+
@@ -56,23 +56,18 @@ q4.sql results:
 +----+
 
 q5.sql results:
-+-----+----------+
-| bid | COUNT(1) |
-+-----+----------+
-| B14 |        3 |
-| B2  |        3 |
-| B4  |        3 |
-| B10 |        2 |
-| B3  |        2 |
-| B11 |        1 |
-| B12 |        1 |
-| B13 |        1 |
-| B5  |        1 |
-| B6  |        1 |
-| B7  |        1 |
-| B8  |        1 |
-| B9  |        1 |
-+-----+----------+
++-----+--------+
+| bid | bCount |
++-----+--------+
+| B14 |      3 |
+| B2  |      3 |
+| B4  |      3 |
+| B11 |      1 |
+| B13 |      1 |
+| B5  |      1 |
+| B7  |      1 |
+| B9  |      1 |
++-----+--------+
 
 q6.sql results:
 +-------------------+------------+
