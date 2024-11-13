@@ -1,4 +1,4 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://test.com/b" fullyQualified="true">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" fullyQualified="true">
     <xs:element name="Buildings">
         <xs:complexType>
             <xs:sequence>

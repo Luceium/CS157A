@@ -1,4 +1,6 @@
-<Buildings>
+<?xml version="1.0" encoding="utf-8"?>
+
+<Buildings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="buildings.xsd">
     <Building BuildingCode="KOH" BuildingName="King Olympic Hall">
         <Position>
             <Latitude>34.024547</Latitude>
