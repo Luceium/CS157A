@@ -1,63 +1,67 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:b="http://test.com/b">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:include schemaLocation="buildings.xsd"/>
-    <xs:import namespace="http://test.com/b" schemaLocation="buildings.xsd"/>
 
-    <xs:element name="Student">
+    <xs:element name="Students">
         <xs:complexType>
-            <!-- Elements -->
-            <xs:sequence minOccurs="1">
-                <!-- Phone Number -->
-                <xs:element name="PhoneNumber" maxOccurs="unbounded">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:minLength value="10"/>
-                            <xs:maxLength value="14"/>
-                            <xs:pattern value="\d{3}.*"/>
-                        </xs:restriction>
-                    </xs:simpleType>
+            <xs:sequence>
+                <xs:element name="Student" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <!-- Elements -->
+                        <xs:sequence minOccurs="1">
+                            <!-- Reference to BuildingCode from buildings.xsd -->
+                            <xs:element ref="BuildingCode" maxOccurs="unbounded" />
+
+                            <!-- Phone Number -->
+                            <xs:element name="PhoneNumber" maxOccurs="unbounded">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="10"/>
+                                        <xs:maxLength value="14"/>
+                                        <xs:pattern value="\d{3}.*"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+
+                        <!-- Attributes -->
+                        <!-- SSN -->
+                        <xs:attribute name="SSN">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="\d{3}-\d{2}-\d{4}" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+    
+                        <!-- Name -->
+                        <xs:attribute name="Name" type="xs:normalizedString" />
+    
+                        <!-- DOB -->
+                        <xs:attribute name="DOB" type="xs:date" />
+    
+                        <!-- Gender -->
+                        <xs:attribute name="Gender">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="M"/>
+                                    <xs:enumeration value="F"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+    
+                        <!-- Type -->
+                        <xs:attribute name="Type">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="PhD"/>
+                                    <xs:enumeration value="Masters"/>
+                                    <xs:enumeration value="Both"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
                 </xs:element>
-
-                <!-- Reference to BuildingCode from buildings.xsd -->
-                <xs:element ref="b:BuildingCode" minOccurs="0" maxOccurs="unbounded" />
             </xs:sequence>
-
-            <!-- Attributes -->
-            <!-- SSN -->
-            <xs:attribute name="SSN">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:pattern value="\d{3}-\d{2}-\d{4}" />
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-
-            <!-- Name -->
-            <xs:attribute name="Name" type="xs:normalizedString" />
-
-            <!-- DOB -->
-            <xs:attribute name="DOB" type="xs:date" />
-
-            <!-- Gender -->
-            <xs:attribute name="Gender">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="M"/>
-                        <xs:enumeration value="F"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-
-            <!-- Type -->
-            <xs:attribute name="Type">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:enumeration value="PhD"/>
-                        <xs:enumeration value="Masters"/>
-                        <xs:enumeration value="Both"/>
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
-
         </xs:complexType>
     </xs:element>
 </xs:schema>

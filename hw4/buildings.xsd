@@ -1,4 +1,4 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" fullyQualified="true">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="buildings.xsd">
     <xs:element name="Buildings">
         <xs:complexType>
             <xs:sequence>
@@ -29,7 +29,7 @@
                 
                             <!-- BuildingCode -->
                             <!-- Would have been an attribute but, it's used multiple times in students -->
-                            <b:Buildings name="BuildingCode" type="BuildingCodeType" />
+                            <xs:element ref="BuildingCode" />
                         </xs:all>
                         
                         <!-- Attributes (useful bc 1 instance is already handled) -->
@@ -43,9 +43,11 @@
     </xs:element>
 
     <!-- Define BuildingCode type in gloabal to make it accessable to stuent.xsd -->
-    <xs:simpleType name="BuildingCodeType">
-        <xs:restriction base="xs:string">
-            <xs:length value="3" />
-        </xs:restriction>
-    </xs:simpleType>
+    <xs:element name="BuildingCode">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:length value="3" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
 </xs:schema>

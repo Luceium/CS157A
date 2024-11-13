@@ -1,199 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Buildings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="buildings.xsd">
-    <Building BuildingCode="KOH" BuildingName="King Olympic Hall">
+    <Building BuildingName="King Olympic Hall">
+        <BuildingCode>KOH</BuildingCode>
         <Position>
             <Latitude>34.024547</Latitude>
             <Longitude>-118.288</Longitude>
         </Position>
-        <Address>
-            <StreetNo>1027</StreetNo>
-            <StreetName>W 34th St</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90007</Zip>
-        </Address>
+        <Address StreetNo="1027" StreetName="W 34th St" City="Los Angeles" State="CA" Zip="90007"/>
     </Building>
-    <Building BuildingCode="CFX" BuildingName="Cromwell Field">
+    <Building BuildingName="Cromwell Field">
+        <BuildingCode>CFX</BuildingCode>
         <Position>
             <Latitude>34.021631</Latitude>
             <Longitude>-118.289</Longitude>
         </Position>
-        <Address>
-            <StreetNo>1026</StreetNo>
-            <StreetName>W 34th St</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="1026" StreetName="W 34th St" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="JEP" BuildingName="JEP House">
+    <Building BuildingName="JEP House">
+        <BuildingCode>JEP</BuildingCode>
         <Position>
             <Latitude>34.022947</Latitude>
             <Longitude>-118.284</Longitude>
         </Position>
-        <Address>
-            <StreetNo>801</StreetNo>
-            <StreetName>W 34th St</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="801" StreetName="W 34th St" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="SHC" BuildingName="Student Health Center">
+    <Building BuildingName="Student Health Center">
+        <BuildingCode>SHC</BuildingCode>
         <Position>
             <Latitude>34.023303</Latitude>
             <Longitude>-118.285</Longitude>
         </Position>
-        <Address>
-            <StreetNo>849</StreetNo>
-            <StreetName>W 34th St</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="849" StreetName="W 34th St" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="LVY" BuildingName="Leavey Library">
+    <Building BuildingName="Leavey Library">
+        <BuildingCode>LVY</BuildingCode>
         <Position>
             <Latitude>34.021595</Latitude>
             <Longitude>-118.282</Longitude>
         </Position>
-        <Address>
-            <StreetNo>651</StreetNo>
-            <StreetName>W 35th St</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="651" StreetName="W 35th St" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="VKC" BuildingName="Von KleinSmid Center">
+    <Building BuildingName="Von KleinSmid Center">
+        <BuildingCode>VKC</BuildingCode>
         <Position>
             <Latitude>34.021649</Latitude>
             <Longitude>-118.284</Longitude>
         </Position>
-        <Address>
-            <StreetNo>3518</StreetNo>
-            <StreetName>Trousdale</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="3518" StreetName="Trousdale" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="WPH" BuildingName="Waite Phillips Hall">
+    <Building BuildingName="Waite Phillips Hall">
+        <BuildingCode>WPH</BuildingCode>
         <Position>
             <Latitude>34.022289</Latitude>
             <Longitude>-118.284</Longitude>
         </Position>
-        <Address>
-            <StreetNo>3550</StreetNo>
-            <StreetName>Trousdale</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="3550" StreetName="Trousdale" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="JHH" BuildingName="John Hubbard Hall">
+    <Building BuildingName="John Hubbard Hall">
+        <BuildingCode>JHH</BuildingCode>
         <Position>
             <Latitude>34.020101</Latitude>
             <Longitude>-118.284</Longitude>
         </Position>
-        <Address>
-            <StreetNo>615</StreetNo>
-            <StreetName>Childs Way</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="615" StreetName="Childs Way" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="REG" BuildingName="Registration Building">
+    <Building BuildingName="Registration Building">
+        <BuildingCode>REG</BuildingCode>
         <Position>
             <Latitude>34.019603</Latitude>
             <Longitude>-118.282</Longitude>
         </Position>
-        <Address>
-            <StreetNo>611</StreetNo>
-            <StreetName>Childs Way</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="611" StreetName="Childs Way" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="STU" BuildingName="Student Union">
+    <Building BuildingName="Student Union">
+        <BuildingCode>STU</BuildingCode>
         <Position>
             <Latitude>34.020226</Latitude>
             <Longitude>-118.286</Longitude>
         </Position>
-        <Address>
-            <StreetNo>3551</StreetNo>
-            <StreetName>Trousdale</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="3551" StreetName="Trousdale" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="BKS" BuildingName="Bookstore">
+    <Building BuildingName="Bookstore">
+        <BuildingCode>BKS</BuildingCode>
         <Position>
             <Latitude>34.020635</Latitude>
             <Longitude>-118.286</Longitude>
         </Position>
-        <Address>
-            <StreetNo>840</StreetNo>
-            <StreetName>Childs Way</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="840" StreetName="Childs Way" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="RTH" BuildingName="Ronald Tutor Hall">
+    <Building BuildingName="Ronald Tutor Hall">
+        <BuildingCode>RTH</BuildingCode>
         <Position>
             <Latitude>34.020137</Latitude>
             <Longitude>-118.29</Longitude>
         </Position>
-        <Address>
-            <StreetNo>3710</StreetNo>
-            <StreetName>McClintock</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="3710" StreetName="McClintock" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="SAL" BuildingName="Salvatori Com. Center">
+    <Building BuildingName="Salvatori Com. Center">
+        <BuildingCode>SAL</BuildingCode>
         <Position>
             <Latitude>34.01955</Latitude>
             <Longitude>-118.289</Longitude>
         </Position>
-        <Address>
-            <StreetNo>941</StreetNo>
-            <StreetName>W 37th Place</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="941" StreetName="W 37th Place" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="EEB" BuildingName="Electrical Engr Center">
+    <Building BuildingName="Electrical Engr Center">
+        <BuildingCode>EEB</BuildingCode>
         <Position>
             <Latitude>34.019728</Latitude>
             <Longitude>-118.29</Longitude>
         </Position>
-        <Address>
-            <StreetNo>3715</StreetNo>
-            <StreetName>McClintock</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="3715" StreetName="McClintock" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
-    <Building BuildingCode="OHE" BuildingName="Olin Hall Engineering">
+    <Building BuildingName="Olin Hall Engineering">
+        <BuildingCode>OHE</BuildingCode>
         <Position>
             <Latitude>34.020493</Latitude>
             <Longitude>-118.29</Longitude>
         </Position>
-        <Address>
-            <StreetNo>3650</StreetNo>
-            <StreetName>McClintock</StreetName>
-            <City>Los Angeles</City>
-            <State>CA</State>
-            <Zip>90089</Zip>
-        </Address>
+        <Address StreetNo="3650" StreetName="McClintock" City="Los Angeles" State="CA" Zip="90089"/>
     </Building>
 </Buildings>

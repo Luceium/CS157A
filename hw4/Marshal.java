@@ -1,9 +1,14 @@
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
+import org.json.JSONObject;
+import org.json.XML;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOError;
 import java.io.IOException;
 
@@ -14,34 +19,29 @@ public class Marshal {
         this.path = path;
     }
 
-    private void xmlToJson(String fileName) {
-        fileName = fileName.endsWith(".xml") ? fileName.substring(0, fileName.length()-4) : fileName;
+    private void xmlToJson(String inputFile, String outputFile) {
         try {
-            BufferedInputStream in = new BufferedInputStream(new FileInputStream(new File(path + fileName + ".xml")));
-            BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(new File(path + fileName + ".json")));
+            BufferedReader in = new BufferedReader(
+                new FileReader(new File(path + inputFile + ".xml"))
+            );
+            BufferedWriter out = new BufferedWriter(
+                new FileWriter(new File(path + outputFile + ".json"))
+            );
+
+            JSONObject json = new XML.toJSONObject(in);
+            out.write(json.toString(4));
 
             out.flush();
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
 
-    }
-    private void jsonToXml(String fileName) {
-        fileName = fileName.endsWith(".json") ? fileName.substring(0, fileName.length()-5) : fileName;
-        try {
-            BufferedInputStream in = new BufferedInputStream(new FileInputStream(new File(path + fileName + ".json")));
-            BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(new File(path + fileName + ".xml")));
-
-            out.flush();
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
     }
 
     public static void main(String[] args) {
         String path = args.length > 0 ? args[0] : "C:\\Users\\User\\Desktop\\";
         Marshal marshal = new Marshal(path);
-        marshal.xmlToJson("buildings.xml");
-        marshal.xmlToJson("students.xml");
+        marshal.xmlToJson("buildings", "building");
+        marshal.xmlToJson("students", "student");
     }
 }

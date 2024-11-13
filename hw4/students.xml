@@ -1,4 +1,5 @@
-<Students>
+<Students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="students.xsd">
     <Student SSN="111-00-1111" Name="Rylan" DOB="1968-04-01" Gender="M" Type="Both">
         <BuildingCode>CFX</BuildingCode>
         <BuildingCode>JEP</BuildingCode>
@@ -21,11 +22,11 @@
         <PhoneNumber>213-740-4445</PhoneNumber>
     </Student>
     <Student SSN="111-00-5555" Name="Aiden" DOB="1982-04-01" Gender="M" Type="Both">
-        <PhoneNumber>213-740-5555</PhoneNumber>
         <BuildingCode>LVY</BuildingCode>
         <BuildingCode>VKC</BuildingCode>
         <BuildingCode>WPH</BuildingCode>
         <BuildingCode>KOH</BuildingCode>
+        <PhoneNumber>213-740-5555</PhoneNumber>
     </Student>
     <Student SSN="111-00-6666" Name="Barak" DOB="1979-04-01" Gender="F" Type="Masters">
         <PhoneNumber>213-740-6666</PhoneNumber>
@@ -52,10 +53,10 @@
         <PhoneNumber>213-740-0000</PhoneNumber>
     </Student>
     <Student SSN="111-11-1111" Name="Hannah" DOB="1965-04-01" Gender="F" Type="Masters">
-        <PhoneNumber>213-741-1111</PhoneNumber>
         <BuildingCode>RTH</BuildingCode>
         <BuildingCode>SAL</BuildingCode>
         <BuildingCode>OHE</BuildingCode>
+        <PhoneNumber>213-741-1111</PhoneNumber>
     </Student>
     <Student SSN="111-11-2222" Name="Zoe" DOB="1962-04-01" Gender="F" Type="Masters">
         <BuildingCode>CFX</BuildingCode>
