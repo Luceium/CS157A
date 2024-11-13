@@ -1,0 +1,51 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://test.com/b" fullyQualified="true">
+    <xs:element name="Buildings">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Building" maxOccurs="unbounded" >
+                    <xs:complexType>
+                        <xs:all minOccurs="1">
+                            <!-- Elements -->
+                            <!-- Position -->
+                            <xs:element name="Position">
+                                <xs:complexType>
+                                    <xs:all minOccurs="1">
+                                        <xs:element name="Latitude" type="xs:decimal" />
+                                        <xs:element name="Longitude" type="xs:decimal" />
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                            
+                            <!-- Address: optional, includes StreetNo, StreetName, City, State, Zip -->
+                            <xs:element name="Address" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="StreetNo" type="xs:string" />
+                                    <xs:attribute name="StreetName" type="xs:string" />
+                                    <xs:attribute name="City" type="xs:string" />
+                                    <xs:attribute name="State" type="xs:string" />
+                                    <xs:attribute name="Zip" type="xs:string" />
+                                </xs:complexType>
+                            </xs:element>
+                
+                            <!-- BuildingCode -->
+                            <!-- Would have been an attribute but, it's used multiple times in students -->
+                            <b:Buildings name="BuildingCode" type="BuildingCodeType" />
+                        </xs:all>
+                        
+                        <!-- Attributes (useful bc 1 instance is already handled) -->
+                    
+                        <!-- BuildingName -->
+                        <xs:attribute name="BuildingName" use="required" type="xs:string" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define BuildingCode type in gloabal to make it accessable to stuent.xsd -->
+    <xs:simpleType name="BuildingCodeType">
+        <xs:restriction base="xs:string">
+            <xs:length value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

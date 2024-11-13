@@ -1,0 +1,103 @@
+<Students>
+    <Student SSN="111-00-1111" Name="Rylan" DOB="1968-04-01" Gender="M" Type="Both">
+        <BuildingCode>CFX</BuildingCode>
+        <BuildingCode>JEP</BuildingCode>
+        <PhoneNumber>213-740-1111</PhoneNumber>
+        <PhoneNumber>213-740-1112</PhoneNumber>
+    </Student>
+    <Student SSN="111-00-2222" Name="Joshua" DOB="1970-04-01" Gender="M" Type="Both">
+        <BuildingCode>RTH</BuildingCode>
+        <BuildingCode>OHE</BuildingCode>
+        <PhoneNumber>213-740-2222</PhoneNumber>
+    </Student>
+    <Student SSN="111-00-3333" Name="Allen" DOB="1969-04-01" Gender="F" Type="Both">
+        <BuildingCode>RTH</BuildingCode>
+        <PhoneNumber>213-740-3333</PhoneNumber>
+    </Student>
+    <Student SSN="111-00-4444" Name="Aidan" DOB="1985-04-01" Gender="M" Type="Both">
+        <BuildingCode>JHH</BuildingCode>
+        <BuildingCode>REG</BuildingCode>
+        <PhoneNumber>213-740-4444</PhoneNumber>
+        <PhoneNumber>213-740-4445</PhoneNumber>
+    </Student>
+    <Student SSN="111-00-5555" Name="Aiden" DOB="1982-04-01" Gender="M" Type="Both">
+        <PhoneNumber>213-740-5555</PhoneNumber>
+        <BuildingCode>LVY</BuildingCode>
+        <BuildingCode>VKC</BuildingCode>
+        <BuildingCode>WPH</BuildingCode>
+        <BuildingCode>KOH</BuildingCode>
+    </Student>
+    <Student SSN="111-00-6666" Name="Barak" DOB="1979-04-01" Gender="F" Type="Masters">
+        <PhoneNumber>213-740-6666</PhoneNumber>
+    </Student>
+    <Student SSN="111-00-7777" Name="Basil" DOB="1978-04-01" Gender="M" Type="Masters">
+        <BuildingCode>LVY</BuildingCode>
+        <BuildingCode>VKC</BuildingCode>
+        <BuildingCode>WPH</BuildingCode>
+        <PhoneNumber>213-740-7777</PhoneNumber>
+    </Student>
+    <Student SSN="111-00-8888" Name="Cayden" DOB="1975-04-01" Gender="F" Type="Masters">
+        <BuildingCode>RTH</BuildingCode>
+        <BuildingCode>SAL</BuildingCode>
+        <BuildingCode>OHE</BuildingCode>
+        <PhoneNumber>213-740-8888</PhoneNumber>
+        <PhoneNumber>213-740-8889</PhoneNumber>
+    </Student>
+    <Student SSN="111-00-9999" Name="Brendon" DOB="1972-04-01" Gender="M" Type="Masters">
+        <BuildingCode>RTH</BuildingCode>
+        <BuildingCode>SAL</BuildingCode>
+        <PhoneNumber>213-740-9999</PhoneNumber>
+    </Student>
+    <Student SSN="111-00-0000" Name="Nate" DOB="1973-04-01" Gender="M" Type="Masters">
+        <PhoneNumber>213-740-0000</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-1111" Name="Hannah" DOB="1965-04-01" Gender="F" Type="Masters">
+        <PhoneNumber>213-741-1111</PhoneNumber>
+        <BuildingCode>RTH</BuildingCode>
+        <BuildingCode>SAL</BuildingCode>
+        <BuildingCode>OHE</BuildingCode>
+    </Student>
+    <Student SSN="111-11-2222" Name="Zoe" DOB="1962-04-01" Gender="F" Type="Masters">
+        <BuildingCode>CFX</BuildingCode>
+        <BuildingCode>STU</BuildingCode>
+        <BuildingCode>BKS</BuildingCode>
+        <PhoneNumber>213-741-2222</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-3333" Name="Alexis" DOB="1963-04-01" Gender="M" Type="PhD">
+        <PhoneNumber>213-741-3333</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-4444" Name="Madison" DOB="1975-04-01" Gender="F" Type="PhD">
+        <BuildingCode>KOH</BuildingCode>
+        <BuildingCode>CFX</BuildingCode>
+        <BuildingCode>SAL</BuildingCode>
+        <PhoneNumber>213-741-4444</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-5555" Name="Adalgisa" DOB="1976-04-01" Gender="M" Type="PhD">
+        <BuildingCode>CFX</BuildingCode>
+        <PhoneNumber>213-741-5555</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-6666" Name="Cora" DOB="1977-04-01" Gender="M" Type="PhD">
+        <BuildingCode>CFX</BuildingCode>
+        <BuildingCode>KOH</BuildingCode>
+        <PhoneNumber>213-741-6666</PhoneNumber>
+        <PhoneNumber>213-741-6667</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-7777" Name="Adalia" DOB="1982-04-01" Gender="F" Type="PhD">
+        <PhoneNumber>213-741-7777</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-8888" Name="Ava" DOB="1983-04-01" Gender="F" Type="PhD">
+        <BuildingCode>RTH</BuildingCode>
+        <BuildingCode>OHE</BuildingCode>
+        <PhoneNumber>213-741-8888</PhoneNumber>
+        <PhoneNumber>213-741-8889</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-9999" Name="Celia" DOB="1986-04-01" Gender="M" Type="PhD">
+        <BuildingCode>RTH</BuildingCode>
+        <PhoneNumber>213-741-9999</PhoneNumber>
+    </Student>
+    <Student SSN="111-11-0000" Name="Zaida" DOB="1983-04-01" Gender="F" Type="PhD">
+        <BuildingCode>SAL</BuildingCode>
+        <BuildingCode>EEB</BuildingCode>
+        <PhoneNumber>213-741-0000</PhoneNumber>
+    </Student>
+</Students>
