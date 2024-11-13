@@ -13,22 +13,16 @@ import java.io.IOError;
 import java.io.IOException;
 
 public class Marshal {
-    private String path;
-
-    public Marshal(String path) {
-        this.path = path;
-    }
-
-    private void xmlToJson(String inputFile, String outputFile) {
+    private static void xmlToJson(String inputFile, String outputFile) {
         try {
             BufferedReader in = new BufferedReader(
-                new FileReader(new File(path + inputFile + ".xml"))
+                new FileReader(new File(inputFile + ".xml").getAbsolutePath())
             );
             BufferedWriter out = new BufferedWriter(
-                new FileWriter(new File(path + outputFile + ".json"))
+                new FileWriter(new File(outputFile + ".json").getAbsolutePath())
             );
 
-            JSONObject json = new XML.toJSONObject(in);
+            JSONObject json = XML.toJSONObject(in);
             out.write(json.toString(4));
 
             out.flush();
@@ -39,9 +33,7 @@ public class Marshal {
     }
 
     public static void main(String[] args) {
-        String path = args.length > 0 ? args[0] : "C:\\Users\\User\\Desktop\\";
-        Marshal marshal = new Marshal(path);
-        marshal.xmlToJson("buildings", "building");
-        marshal.xmlToJson("students", "student");
+        Marshal.xmlToJson("buildings", "building");
+        Marshal.xmlToJson("students", "student");
     }
 }
